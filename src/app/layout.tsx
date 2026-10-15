@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+// @ts-expect-error CSS is processed by Next.js at build time.
 import "./globals.css";
 
 const geistSans = Geist({
@@ -27,7 +28,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <div className={"bg-red-500 text-white font-bold text-[32px]"}>POCETAK LAYOUT-a!</div>
         {children}
+        <div className={"bg-red-500 text-white font-bold text-[32px]"}>KRAJ LAYOUT-a!</div>
       </body>
     </html>
   );
